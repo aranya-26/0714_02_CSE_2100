@@ -1,147 +1,213 @@
-# 🎮 Hangman Game — Code Refactoring & Software Engineering Standards Guide
+Issues:
 
-**Course:** Advanced Programming Lab  
-**Project:** Hangman Game (C Language with Raylib)  
-**Purpose:** Improve code maintainability, readability, modularity, and scalability  
-**Date:** February 2026
+Abbreviations reduce clarity
+Hard to understand intent
+Inconsistent naming
 
----
+After Refactoring
+Cint failedAttempts;
+char topic[MAX_WORD_LENGTH];
+char secretWord[MAX_WORD_LENGTH];
+bool isPressed;
+bool isVisible;
+Benefits:
 
-## 📑 Table of Contents
+Self-documenting variables
+Easier debugging
+Improved readability
 
-1. [Executive Summary](#executive-summary)
-2. [Naming Conventions](#naming-conventions)
-3. [Coding Style Guidelines](#coding-style-guidelines)
-4. [Folder Structure](#folder-structure)
-5. [Modular Design Principles](#modular-design-principles)
-6. [Error Handling & Robustness](#error-handling--robustness)
-7. [Testing Strategy](#testing-strategy)
-8. [Refactoring Roadmap](#refactoring-roadmap)
-9. [Future Improvements](#future-improvements)
+Function Naming Refactoring
+Before
+Cvoid DrawHangman(int tries);
+char HandleKeyboardButtons(...);
+int LoadWords(...);
+After
+Cvoid DrawHangmanFigure(int failedAttempts);
+char HandleKeyboardInput(...);
+int LoadWordList(...);
+Why This Matters:
 
----
+Verb-based naming clarifies purpose
+Supports modular development
+Enhances maintainability
 
-## Executive Summary
+Constants Naming Refactoring
+Before
+C#define MAX_WORDS 500
+#define MAX_LEN 128
+After
+C#define MAX_WORDS           500
+#define MAX_WORD_LENGTH     128
+#define KEYBOARD_KEY_WIDTH  48
+Improvement:
 
-### Current Project Overview
-The Hangman Game is a graphical word-guessing game built with **Raylib** in C.
+Eliminates magic numbers
+Makes configuration easier
 
-**Strengths:**
-* Word loading from file (topic:word format)
-* On-screen keyboard + physical keyboard input
-* Progressive hangman figure drawing
-* Random initial letter hints
-* Win/lose detection with restart/quit functionality
+Structure Naming Refactoring
+Before
+Ctypedef struct { Rectangle r; char l; bool p; bool vl; } KeyButton;
+After
+Ctypedef struct {
+    Rectangle rectangle;
+    char letter;
+    bool isPressed;
+    bool isVisible;
+} KeyboardKey;
+Advantages:
 
-**Areas for Improvement:**
-* **Monolithic Structure:** All logic resides in a single file.
-* **Naming Issues:** Inconsistent or overly short variable names.
-* **Coupling:** Mixed concerns between game logic, UI, and input handling.
-* **Documentation:** Minimal comments explaining the "why" behind the code.
+Clear abstraction
+Better data organization
 
-### Refactoring Philosophy
 
-> "Refactor incrementally without breaking gameplay functionality."
+Coding Style Guidelines
+Indentation
 
-**Goals:**
-* Cleaner code structure and easier debugging.
-* Better scalability for adding new categories or levels.
-* Improved readability for peer review.
-* Adherence to professional coding standards.
+4 spaces preferred
+Avoid mixing tabs and spaces
 
----
+Example:
+Cif (!revealedMask[pos]) {
+    guessedWord[pos] = tolower(secretWord[pos]);
+}
+Line Length
 
-## Naming Conventions
+Recommended maximum ≈ 100 characters
+Break long expressions logically
 
-### Variable Naming Refactoring
-
-| Before Refactoring | After Refactoring | Benefit |
-| :--- | :--- | :--- |
-| `int tries;` | `int failedAttempts;` | Descriptive intent |
-| `char t[MAX_WORDS];` | `char topic[MAX_WORD_LENGTH];` | Avoids cryptic abbreviations |
-| `bool p, vl;` | `bool isPressed, isVisible;` | Boolean clarity |
-
-### Function Naming Refactoring
-
-* **Before:** `void DrawHangman(int tries);`
-* **After:** `void DrawHangmanFigure(int failedAttempts);`
-* **Why:** Verb-based naming clarifies the specific action and supports modularity.
-
----
-
-## Coding Style Guidelines
-
-### Indentation & Layout
-* **4 spaces** preferred (no tabs).
-* Line length limited to **100 characters**.
-
-### Comment Quality
-**Before:**
-```c
-guessed[i] = '_'; // guess
-
-After:
-C
-
-/* * Initialize unrevealed alphabetic positions with underscore.
+Comment Quality Improvement
+Before
+Cguessed[i] = '_'; // guess
+After
+C/*
+ * Initialize unrevealed alphabetic positions with underscore.
  * Non-alpha characters are revealed immediately.
  */
 guessedWord[i] = '_';
+Principle:
+Comments should explain why, not just what.
 
 Folder Structure
-Recommended Professional Layout
-Plaintext
+Before Refactoring
+texthangman/
+└── main.c (all code)
+Problems:
 
-HangmanGame/
+No separation
+Hard to scale
+
+Recommended Structure (After Refactoring)
+textHangmanGame/
 ├── src/
-│   ├── main.c                # Entry point
-│   ├── hangman_logic.c       # Game rules & state
-│   ├── hangman_ui.c          # Raylib rendering functions
-│   └── hangman_types.h       # Shared structs and defines
-├── assets/
-│   └── words.txt             # Word database
-├── docs/
-│   └── REFACTORING_GUIDE.md  # Documentation
-└── Makefile                  # Build configuration
+│   ├── hangman_main.c
+│   ├── hangman_types.h
+│   ├── hangman_game_logic.c
+│   └── hangman_ui.c
+├── words.txt
+├── HangmanGame.cbp
+└── REFACTORING_DOCUMENTATION.md
+Benefits:
+
+Separation of concerns
+Easier maintenance
+Professional project layout
+
 
 Modular Design Principles
-The Standard Game Loop
+Before Modularization
+C// All in main(): input + guess + draw + check
+Problems:
 
-To separate concerns, the main loop should be kept clean:
-C
+Mixed responsibilities
+Difficult debugging
 
-while (!WindowShouldClose()) {
-    Input_Process();     // Capture keys
-    Game_Update();       // Logical checks (win/loss/guess)
-    Renderer_Draw();     // Visual output
+After Modularization
+Cvoid Input_Process();
+bool ProcessGuess(...);
+void CheckGameOver(...);
+void DrawGuessedWord(...);
+void DrawHangmanFigure(...);
+Standard Game Loop
+Cwhile (!WindowShouldClose()) {
+    Input_Process();
+    Game_Update();
+    Renderer_Draw();
 }
+Advantages:
+
+Clear responsibility separation
+Better testability
+Easier scaling
+
 
 Error Handling & Robustness
 Safe File Loading
-
-Always check if the word file exists before attempting to read:
-C
-
-FILE *file = fopen(filename, "r");
+CFILE *file = fopen(filename, "r");
 if (!file) {
-    TraceLog(LOG_ERROR, "Failed to load word list. Using defaults.");
-    // fallback logic
+    // fallback to default words
 }
+Bounds Checking
+Cif (letterIndex >= 0 && letterIndex < 26 && !guessedLetters[letterIndex])
+Safe String Handling
+Cstrncpy(topic, wordList[idx].topic, MAX_WORD_LENGTH - 1);
+topic[MAX_WORD_LENGTH - 1] = '\0';
+Principle:
+Defensive programming prevents crashes.
+
+Testing Strategy
+Functional Tests
+
+Word loading correctness
+Guess processing accuracy
+Win/lose condition detection
+
+Boundary Tests
+
+Empty words
+Maximum word length
+All letters guessed
+
+Regression Testing
+Re-play game after each refactoring step.
 
 Refactoring Roadmap
+Phase 1 — Cleanup
 
-    Phase 1 (Cleanup): Rename variables, remove magic numbers using #define.
+Fix naming conventions
+Add constants
+Improve documentation
 
-    Phase 2 (Modularization): Move Raylib drawing code into hangman_ui.c.
+Phase 2 — Modularization
 
-    Phase 3 (Robustness): Add bounds checking for array indices and string lengths.
+Split into files
+Extract functions
 
-    Phase 4 (Polishing): Finalize documentation and add "Future Improvements" hooks.
+Phase 3 — Polish
+
+Add robust error handling
+Refine comments
+
+Phase 4 — Extension Ready
+
+Prepare for future features
+
 
 Future Improvements
+Gameplay Features
 
-    Gameplay: Multiple difficulty levels, timer mode, and sound effects.
+Multiple rounds / difficulty levels
+Timer mode
+Sound effects
+Custom word lists
 
-    Technical: High-score saving to a local file, responsive UI for different window sizes.
+Technical Enhancements
 
-    DevOps: Integration of unit tests for the word-picking logic
+High-score saving
+Mobile/responsive UI
+Multiplayer mode
+
+Software Engineering Improvements
+
+Unit tests
+Version control best practices
+Automatic code formatting
