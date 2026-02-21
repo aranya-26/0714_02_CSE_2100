@@ -67,24 +67,11 @@ The Hangman Game is a graphical word-guessing game built with Raylib in C, featu
 
 
 #### Before Refactoring
-```c
-int tries;
-char t[MAX_WORDS];
-char w[MAX_LEN];
-bool p, vl;
+void DrawHangman(int tries);
+char HandleKeyboardButtons(...);
+int LoadWords(...);
 
-
-
-Issues:
-
-Abbreviations reduce clarity
-Hard to understand intent
-Inconsistent naming
-
-After Refactoring
-
-int failedAttempts;
-char topic[MAX_WORD_LENGTH];
-char secretWord[MAX_WORD_LENGTH];
-bool isPressed;
-bool isVisible;
+After
+void DrawHangmanFigure(int failedAttempts);
+char HandleKeyboardInput(...);
+int LoadWordList(...);
