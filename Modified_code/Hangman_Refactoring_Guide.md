@@ -1,7 +1,7 @@
-# 🎮 Hangman Game — Code Refactoring & Software Engineering Standards Guide
+# 🐍 Snake Game — Code Refactoring & Software Engineering Standards Guide
 
 **Course:** Advanced Programming Lab  
-**Project:** Hangman Game (C Language with Raylib)  
+**Project:** Snake Game (C Language)  
 **Purpose:** Improve code maintainability, readability, modularity, and scalability  
 **Date:** February 2026
 
@@ -14,10 +14,11 @@
 3. [Coding Style Guidelines](#coding-style-guidelines)
 4. [Folder Structure](#folder-structure)
 5. [Modular Design Principles](#modular-design-principles)
-6. [Error Handling & Robustness](#error-handling--robustness)
-7. [Testing Strategy](#testing-strategy)
-8. [Refactoring Roadmap](#refactoring-roadmap)
-9. [Future Improvements](#future-improvements)
+6. [Design Patterns for Snake Game](#design-patterns-for-snake-game)
+7. [Error Handling & Memory Management](#error-handling--memory-management)
+8. [Testing Strategy](#testing-strategy)
+9. [Refactoring Roadmap](#refactoring-roadmap)
+10. [Future Improvements](#future-improvements)
 
 ---
 
@@ -25,21 +26,21 @@
 
 ### Current Project Overview
 
-The Hangman Game is a graphical word-guessing game built with Raylib in C, featuring:
+The Snake Game project is a C-based interactive game featuring:
 
 **Strengths:**
-- Word loading from file (topic:word format)
-- On-screen keyboard + physical keyboard input
-- Progressive hangman figure drawing
-- Random initial letter hints
-- Win/lose detection with restart/quit
+- Functional snake movement system
+- Collision detection implemented
+- Score tracking system
+- Simple UI rendering (console/graphics depending on version)
+- Real-time keyboard input handling
 
-**Areas for Improvement (Original):**
-- Single monolithic file
-- Inconsistent/short variable names
-- Mixed concerns (logic + UI + input)
-- Minimal comments
-- Repeated code blocks
+**Areas for Improvement:**
+- Inconsistent naming conventions
+- Excessive use of global variables
+- Tight coupling between input, logic, and rendering
+- Limited modular separation
+- Difficult feature extensibility
 
 ### Refactoring Philosophy
 
@@ -67,220 +68,358 @@ The Hangman Game is a graphical word-guessing game built with Raylib in C, featu
 
 #### Before Refactoring
 ```c
-int tries;
-char t[MAX_WORDS];
-char w[MAX_LEN];
-bool p, vl;
-##Issues:
+int x, y;
+int snkLen;
+int scr;
+int dir;
+```
 
-Abbreviations reduce clarity
-Hard to understand intent
-Inconsistent naming
+**Issues:**
+- Abbreviations reduce clarity
+- Hard to understand intent
+- Inconsistent naming
 
-##After Refactoring
-Cint failedAttempts;
-char topic[MAX_WORD_LENGTH];
-char secretWord[MAX_WORD_LENGTH];
-bool isPressed;
-bool isVisible;
-Benefits:
+#### After Refactoring
+```c
+int snakeHeadX;
+int snakeHeadY;
+int snakeLength;
+int playerScore;
+int snakeDirection;
+```
 
-Self-documenting variables
-Easier debugging
-Improved readability
+**Benefits:**
+- Self-documenting variables
+- Easier debugging
+- Improved readability
 
-Function Naming Refactoring
-Before
-Cvoid DrawHangman(int tries);
-char HandleKeyboardButtons(...);
-int LoadWords(...);
-After
-Cvoid DrawHangmanFigure(int failedAttempts);
-char HandleKeyboardInput(...);
-int LoadWordList(...);
-Why This Matters:
+### Function Naming Refactoring
 
-Verb-based naming clarifies purpose
-Supports modular development
-Enhances maintainability
+#### Before
+```c
+void mv();
+void chk();
+void drw();
+```
 
-Constants Naming Refactoring
-Before
-C#define MAX_WORDS 500
-#define MAX_LEN 128
-After
-C#define MAX_WORDS           500
-#define MAX_WORD_LENGTH     128
-#define KEYBOARD_KEY_WIDTH  48
-Improvement:
+#### After
+```c
+void Snake_Move();
+bool Collision_Check();
+void Renderer_DrawFrame();
+```
 
-Eliminates magic numbers
-Makes configuration easier
+**Why This Matters:**
+- Verb-based naming clarifies purpose
+- Supports modular development
+- Enhances maintainability
 
-Structure Naming Refactoring
-Before
-Ctypedef struct { Rectangle r; char l; bool p; bool vl; } KeyButton;
-After
-Ctypedef struct {
-    Rectangle rectangle;
-    char letter;
-    bool isPressed;
-    bool isVisible;
-} KeyboardKey;
-Advantages:
+### Constants Naming Refactoring
 
-Clear abstraction
-Better data organization
+#### Before
+```c
+#define W 40
+#define H 20
+#define SPD 150
+```
 
+#### After
+```c
+#define BOARD_WIDTH 40
+#define BOARD_HEIGHT 20
+#define GAME_SPEED_DEFAULT 150
+```
 
-Coding Style Guidelines
-Indentation
+**Improvement:**
+- Eliminates magic numbers
+- Makes configuration easier
 
-4 spaces preferred
-Avoid mixing tabs and spaces
+### Structure Naming Refactoring
 
-Example:
-Cif (!revealedMask[pos]) {
-    guessedWord[pos] = tolower(secretWord[pos]);
+#### Before
+```c
+struct snk {
+    int x[100];
+    int y[100];
+};
+```
+
+#### After
+```c
+typedef struct {
+    int x;
+    int y;
+} Position;
+
+typedef struct {
+    Position body[MAX_SNAKE_LENGTH];
+    int length;
+    int direction;
+} Snake;
+```
+
+**Advantages:**
+- Encapsulation
+- Clear abstraction
+- Better data organization
+
+---
+
+## Coding Style Guidelines
+
+### Indentation
+
+- **4 spaces** preferred
+- Avoid mixing tabs and spaces
+
+**Example:**
+```c
+if (collisionDetected) {
+    Game_End();
 }
-Line Length
+```
 
-Recommended maximum ≈ 100 characters
-Break long expressions logically
+### Line Length
 
-Comment Quality Improvement
-Before
-Cguessed[i] = '_'; // guess
-After
-C/*
- * Initialize unrevealed alphabetic positions with underscore.
- * Non-alpha characters are revealed immediately.
+- Recommended maximum ≈ **100 characters**
+- Break long expressions logically
+
+### Comment Quality Improvement
+
+#### Before
+```c
+int score = 0; // initialize score
+```
+
+#### After
+```c
+/*
+ * Tracks player's score.
+ * Updated whenever the snake consumes food.
  */
-guessedWord[i] = '_';
-Principle:
-Comments should explain why, not just what.
+int playerScore = 0;
+```
 
-Folder Structure
-Before Refactoring
-texthangman/
-└── main.c (all code)
-Problems:
+**Principle:**  
+Comments should explain **why**, not just **what**.
 
-No separation
-Hard to scale
+---
 
-Recommended Structure (After Refactoring)
-textHangmanGame/
+## Folder Structure
+
+### Before Refactoring
+```
+snake-game/
+├── main.c
+├── snake.c
+├── food.c
+└── utils.c
+```
+
+**Problems:**
+- Flat organization
+- Hard to scale
+- Difficult navigation
+
+### Recommended Structure (After Refactoring)
+```
+snake-game/
 ├── src/
-│   ├── hangman_main.c
-│   ├── hangman_types.h
-│   ├── hangman_game_logic.c
-│   └── hangman_ui.c
-├── words.txt
-├── HangmanGame.cbp
-└── REFACTORING_DOCUMENTATION.md
-Benefits:
+│   ├── main/
+│   │   └── main.c
+│   ├── core/
+│   │   ├── snake.c
+│   │   ├── food.c
+│   │   └── collision.c
+│   ├── input/
+│   ├── rendering/
+│   └── utils/
+├── docs/
+├── assets/
+├── build/
+└── README.md
+```
 
-Separation of concerns
-Easier maintenance
-Professional project layout
+**Benefits:**
+- Separation of concerns
+- Easier maintenance
+- Professional project layout
 
+---
 
-Modular Design Principles
-Before Modularization
-C// All in main(): input + guess + draw + check
-Problems:
+## Modular Design Principles
 
-Mixed responsibilities
-Difficult debugging
+### Before Modularization
+```c
+void UpdateGame() {
+    moveSnake();
+    drawSnake();
+    checkCollision();
+    generateFood();
+}
+```
 
-After Modularization
-Cvoid Input_Process();
-bool ProcessGuess(...);
-void CheckGameOver(...);
-void DrawGuessedWord(...);
-void DrawHangmanFigure(...);
-Standard Game Loop
-Cwhile (!WindowShouldClose()) {
+**Problems:**
+- Mixed responsibilities
+- Difficult debugging
+- Hard feature expansion
+
+### After Modularization
+```c
+void Input_Process();
+void Snake_UpdatePosition();
+void Collision_Check();
+void Food_Update();
+void Renderer_DrawFrame();
+```
+
+### Standard Game Loop
+```c
+while (gameRunning) {
+    Input_Process();
+    Game_Update();
+    Renderer_DrawFrame();
+}
+```
+
+**Advantages:**
+- Clear responsibility separation
+- Better testability
+- Easier scaling
+
+---
+
+## Design Patterns for Snake Game
+
+### Game Loop Pattern
+```c
+while (gameRunning) {
     Input_Process();
     Game_Update();
     Renderer_Draw();
 }
-Advantages:
+```
 
-Clear responsibility separation
-Better testability
-Easier scaling
+Ensures smooth gameplay flow.
 
+### Observer Pattern (Optional)
 
-Error Handling & Robustness
-Safe File Loading
-CFILE *file = fopen(filename, "r");
-if (!file) {
-    // fallback to default words
+**Useful for:**
+- Score updates
+- UI refresh
+- Sound effects
+
+**Example:**
+- Collision Event → Game Over Screen
+- Score Change → UI Update
+
+### Command Pattern (Advanced)
+```c
+typedef struct {
+    Direction moveDirection;
+} MoveCommand;
+```
+
+**Applications:**
+- Replay system
+- AI simulation
+- Undo feature
+
+---
+
+## Error Handling & Memory Management
+
+### Safe Allocation
+```c
+Snake* snake = malloc(sizeof(Snake));
+if (!snake) {
+    fprintf(stderr, "Memory allocation failed\n");
 }
-Bounds Checking
-Cif (letterIndex >= 0 && letterIndex < 26 && !guessedLetters[letterIndex])
-Safe String Handling
-Cstrncpy(topic, wordList[idx].topic, MAX_WORD_LENGTH - 1);
-topic[MAX_WORD_LENGTH - 1] = '\0';
-Principle:
-Defensive programming prevents crashes.
+```
 
-Testing Strategy
-Functional Tests
+### Ownership Documentation
+```c
+/*
+ * Caller must free returned pointer.
+ */
+Snake* Snake_Create(void);
+```
 
-Word loading correctness
-Guess processing accuracy
-Win/lose condition detection
+### Assertions
+```c
+assert(snake != NULL);
+```
 
-Boundary Tests
+Used for development-time validation.
 
-Empty words
-Maximum word length
-All letters guessed
+---
 
-Regression Testing
-Re-play game after each refactoring step.
+## Testing Strategy
 
-Refactoring Roadmap
-Phase 1 — Cleanup
+### Functional Tests
+- Snake movement accuracy
+- Food spawning correctness
+- Collision detection reliability
 
-Fix naming conventions
-Add constants
-Improve documentation
+### Boundary Tests
+- Wall collisions
+- Maximum snake length
+- Rapid direction changes
 
-Phase 2 — Modularization
+### Regression Testing
+Ensure refactoring doesn't break gameplay.
 
-Split into files
-Extract functions
+---
 
-Phase 3 — Polish
+## Refactoring Roadmap
 
-Add robust error handling
-Refine comments
+### Phase 1 — Cleanup
+- Fix naming conventions
+- Reduce global variables
+- Improve documentation
 
-Phase 4 — Extension Ready
+### Phase 2 — Modularization
+- Separate input, logic, rendering
+- Introduce header files
 
-Prepare for future features
+### Phase 3 — Optimization
+- Optimize collision checks
+- Improve rendering efficiency
 
+### Phase 4 — Feature Expansion
+- Levels and difficulty modes
+- Sound effects
+- High-score persistence
 
-Future Improvements
-Gameplay Features
+---
 
-Multiple rounds / difficulty levels
-Timer mode
-Sound effects
-Custom word lists
+## Future Improvements
 
-Technical Enhancements
+### Gameplay Features
+- Multiple difficulty levels
+- Obstacles
+- AI-controlled snake
+- Power-ups
 
-High-score saving
-Mobile/responsive UI
-Multiplayer mode
+### Technical Enhancements
+- Graphics library integration
+- Cross-platform compatibility
+- Save/load game state
 
-Software Engineering Improvements
+### Software Engineering Improvements
+- Unit testing framework
+- Continuous integration pipeline
+- Automatic code formatting
 
-Unit tests
-Version control best practices
-Automatic code formatting
+---
+
+## Final Note
+
+This refactoring guide aims to:
+
+✅ Improve code quality  
+✅ Enhance maintainability  
+✅ Support future expansion  
+✅ Promote professional coding practices
+
+A well-structured Snake Game project demonstrates not only functional gameplay but also strong software engineering discipline, maintainable architecture, and scalability for future enhancements.
