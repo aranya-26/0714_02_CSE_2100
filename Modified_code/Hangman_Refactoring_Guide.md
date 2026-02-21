@@ -79,3 +79,69 @@ The Hangman Game is a graphical word-guessing game built with **Raylib** in C.
 **Before:**
 ```c
 guessed[i] = '_'; // guess
+
+After:
+C
+
+/* * Initialize unrevealed alphabetic positions with underscore.
+ * Non-alpha characters are revealed immediately.
+ */
+guessedWord[i] = '_';
+
+Folder Structure
+Recommended Professional Layout
+Plaintext
+
+HangmanGame/
+├── src/
+│   ├── main.c                # Entry point
+│   ├── hangman_logic.c       # Game rules & state
+│   ├── hangman_ui.c          # Raylib rendering functions
+│   └── hangman_types.h       # Shared structs and defines
+├── assets/
+│   └── words.txt             # Word database
+├── docs/
+│   └── REFACTORING_GUIDE.md  # Documentation
+└── Makefile                  # Build configuration
+
+Modular Design Principles
+The Standard Game Loop
+
+To separate concerns, the main loop should be kept clean:
+C
+
+while (!WindowShouldClose()) {
+    Input_Process();     // Capture keys
+    Game_Update();       // Logical checks (win/loss/guess)
+    Renderer_Draw();     // Visual output
+}
+
+Error Handling & Robustness
+Safe File Loading
+
+Always check if the word file exists before attempting to read:
+C
+
+FILE *file = fopen(filename, "r");
+if (!file) {
+    TraceLog(LOG_ERROR, "Failed to load word list. Using defaults.");
+    // fallback logic
+}
+
+Refactoring Roadmap
+
+    Phase 1 (Cleanup): Rename variables, remove magic numbers using #define.
+
+    Phase 2 (Modularization): Move Raylib drawing code into hangman_ui.c.
+
+    Phase 3 (Robustness): Add bounds checking for array indices and string lengths.
+
+    Phase 4 (Polishing): Finalize documentation and add "Future Improvements" hooks.
+
+Future Improvements
+
+    Gameplay: Multiple difficulty levels, timer mode, and sound effects.
+
+    Technical: High-score saving to a local file, responsive UI for different window sizes.
+
+    DevOps: Integration of unit tests for the word-picking logic
