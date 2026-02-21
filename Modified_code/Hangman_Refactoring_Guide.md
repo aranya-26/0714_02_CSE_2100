@@ -71,13 +71,13 @@ int tries;
 char t[MAX_WORDS];
 char w[MAX_LEN];
 bool p, vl;
-Issues:
+##Issues:
 
 Abbreviations reduce clarity
 Hard to understand intent
 Inconsistent naming
 
-After Refactoring
+##After Refactoring
 Cint failedAttempts;
 char topic[MAX_WORD_LENGTH];
 char secretWord[MAX_WORD_LENGTH];
