@@ -1,5 +1,4 @@
-ফাইনাল ক্লিন ভার্সন (এটা কপি কর):
-Markdown# 🎮 Hangman Game — Code Refactoring & Software Engineering Standards Guide
+# 🎮 Hangman Game — Code Refactoring & Software Engineering Standards Guide
 
 **Course:** Advanced Programming Lab  
 **Project:** Hangman Game (C Language with Raylib)  
