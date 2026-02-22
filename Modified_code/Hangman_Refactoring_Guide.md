@@ -5,8 +5,6 @@
 **Purpose:** Improve code maintainability, readability, modularity, and scalability  
 **Date:** February 2026
 
----
-
 ## 📑 Table of Contents
 
 1. [Executive Summary](#executive-summary)
@@ -23,34 +21,14 @@
 
 ## Executive Summary
 
-### Current Project Overview
+The Hangman Game is a graphical word-guessing game built with Raylib in C.
 
-The Hangman Game is a graphical word-guessing game built with Raylib in C, featuring:
+**Original Issues:** Single file, short names, mixed logic, few comments.  
+**Refactored Goal:** Apply **simplicity, clarity, elegance, consistency** from Kernighan & Pike (Chapter 1).
 
-**Strengths:**
-- Word loading from file (topic:word format)
-- On-screen keyboard + physical keyboard input
-- Progressive hangman figure drawing
-- Random initial letter hints
-- Win/lose detection with restart/quit
-
-**Areas for Improvement (Original):**
-- Single monolithic file
-- Inconsistent/short variable names
-- Mixed concerns (logic + UI + input)
-- Minimal comments
-- Repeated code blocks
-
-### Refactoring Philosophy
-
-> "Refactor incrementally without breaking gameplay functionality."
-
-**Goals:**
-- Cleaner code structure
-- Easier debugging
-- Better scalability
-- Improved readability
-- Professional coding standards
+> “How do we convince people that in programming simplicity and clarity — in short: what mathematicians call ‘elegance’ — are not a dispensable luxury, but a crucial matter that decides between success and failure?”  
+> — Edsger Dijkstra  
+> (Lecture: Program and Programming Style)
 
 ---
 
@@ -58,14 +36,14 @@ The Hangman Game is a graphical word-guessing game built with Raylib in C, featu
 
 ### General Principles
 
-- Use descriptive names
-- Avoid cryptic abbreviations
-- Maintain consistent casing
-- Prefer domain-specific terminology
+- Use descriptive names  
+- Avoid cryptic abbreviations  
+- Maintain consistent casing  
+- Prefer domain-specific terminology  
 
 ### Variable Naming Refactoring
 
-#### Before Refactoring
+**Before Refactoring**
 ```c
 int tries;
 char t[MAX_WORDS];
@@ -178,7 +156,7 @@ textHangmanGame/
 │   └── hangman_ui.c
 ├── words.txt
 ├── HangmanGame.cbp
-└── REFACTORING_DOCUMENTATION.md
+└── README.md
 Benefits:
 
 Separation of concerns
@@ -287,8 +265,8 @@ Automatic code formatting
 
 
 Final Note
-This refactoring guide aims to:
-✅ Improve code quality
-✅ Enhance maintainability
-✅ Support future expansion
-✅ Promote professional coding practices
+This refactoring guide applies simplicity, clarity, elegance and consistency from
+The Practice of Programming (Kernighan & Pike, Chapter 1)
+and the lecture "Program and Programming Style".
+A well-refactored Hangman Game demonstrates functional gameplay + strong software engineering discipline.
+Prepared by Aranya
