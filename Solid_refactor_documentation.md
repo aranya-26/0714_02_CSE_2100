@@ -12,8 +12,6 @@ Student Id: 240226 && 240231
 
 **Lecture Reference: Object Oriented Design**
 
-**Lecturer: Professor Dr Kazi Masudul Alam**
-
 
 ---
 
