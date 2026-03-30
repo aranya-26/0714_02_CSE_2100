@@ -1,0 +1,100 @@
+footballer:messi
+footballer:ronaldo
+footballer:neymar
+footballer:mbappe
+footballer:zidane
+footballer:ronaldinho
+footballer:salah
+footballer:kane
+footballer:lewandowski
+footballer:modric
+cricketer:kohli
+cricketer:smith
+cricketer:warner
+cricketer:dhoni
+cricketer:root
+cricketer:babar
+cricketer:gayle
+cricketer:shakib
+cricketer:stokes
+cricketer:rashid
+country name and capital:bangladesh
+country name and capital:dhaka
+country name and capital:india
+country name and capital:delhi
+country name and capital:usa
+country name and capital:washington
+country name and capital:japan
+country name and capital:tokyo
+country name and capital:france
+country name and capital:paris
+computer and other electronic devices:keyboard
+computer and other electronic devices:mouse
+computer and other electronic devices:monitor
+computer and other electronic devices:cpu
+computer and other electronic devices:printer
+computer and other electronic devices:scanner
+computer and other electronic devices:speaker
+computer and other electronic devices:camera
+computer and other electronic devices:laptop
+computer and other electronic devices:tablet
+university:oxford
+university:cambridge
+university:harvard
+university:mit
+university:stanford
+university:yale
+university:princeton
+university:columbia
+university:khulna
+university:dhaka
+animal:lion
+animal:tiger
+animal:elephant
+animal:giraffe
+animal:zebra
+animal:monkey
+animal:dog
+animal:cat
+animal:horse
+animal:rabbit
+fruit:apple
+fruit:banana
+fruit:orange
+fruit:mango
+fruit:papaya
+fruit:kiwi
+fruit:grapes
+fruit:cherry
+fruit:pineapple
+fruit:watermelon
+verb:run
+verb:jump
+verb:eat
+verb:sleep
+verb:write
+verb:read
+verb:sing
+verb:swim
+verb:play
+verb:drink
+money name:dollar
+money name:euro
+money name:pound
+money name:yen
+money name:taka
+money name:rupee
+money name:riyal
+money name:won
+money name:dinar
+money name:franc
+president name:obama
+president name:biden
+president name:trump
+president name:putin
+president name:boris
+president name:macron
+president name:modi
+president name:xi
+president name:lula
+president name:justin
