@@ -11,6 +11,7 @@ Student Id: 240226 && 240231
 **Project: Hangman Game**
 
 **Lecture Reference: Object Oriented Design**
+**Lecturer: Professor Dr Kazi Masudul Alam**
 
 
 ---
