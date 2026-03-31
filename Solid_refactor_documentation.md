@@ -52,75 +52,9 @@ Java or other high-level languages would have introduced unnecessary complexity 
 ---
 ## 4. UML Class Diagram
 
-```
+<img width="1179" height="657" alt="1774928334569333122269415706065" src="https://github.com/user-attachments/assets/6bc148a4-e6ca-49f9-ba2a-703b11bf5b81" />
 
-class WordLoader {
-  + {static} LoadWords(filename: string): vector<WordEntry>
-}
-
-class GameState {
-  - secretWord: string
-  - guessedWord: string
-  - topic: string
-  - revealedMask: array<bool>
-  - guessedLetters: array<bool>
-  - failedAttempts: int
-  - alphaPositionsTotal: int
-  - isGameOver: bool
-  - isWin: bool
-  ..
-  + Initialize(selectedWord: WordEntry)
-  + ProcessGuess(letter: char)
-  + CheckGameOver()
-  + GetSecretWord(): string
-  + GetGuessedWord(): string
-  + GetTopic(): string
-  + GetFailedAttempts(): int
-  + IsGameOver(): bool
-  + IsWin(): bool
-}
-
-class KeyboardManager {
-  - keys: vector<KeyboardKey>
-  ..
-  + Initialize()
-  + HandleInput(mousePos: Vector2, clicked: bool): char
-  + Draw(onlyDraw: bool)
-  + Reset()
-}
-
-class UIRenderer {
-  + {static} DrawHangmanFigure(failedAttempts: int)
-  + {static} DrawGuessedWord(guessedWord: string, startX: int, py: int)
-  + {static} DrawGameUI(state: GameState, keyboard: KeyboardManager)
-  + {static} DrawGameOverScreen(state: GameState)
-}
-
-class HangmanGame {
-  - wordList: vector<WordEntry>
-  - gameState: GameState
-  - keyboardManager: KeyboardManager
-  ..
-  + HangmanGame()
-  + Run()
-  + Restart()
-}
-
-' Relationships
-HangmanGame "1" *--> "1" GameState
-HangmanGame "1" *--> "1" KeyboardManager
-HangmanGame ..> WordLoader : <<uses>>
-HangmanGame ..> UIRenderer : <<uses>>
-UIRenderer ..> GameState : <<uses>>
-UIRenderer ..> KeyboardManager : <<uses>>
-GameState ..> WordEntry : <<uses>>
-KeyboardManager ..> KeyboardKey : <<uses>>
-
-note right of HangmanGame
-  **Main Orchestrator**
-  Coordinates all other components
-
-```
+---
 
 ## 5. What I Successfully Achieved
 
@@ -132,6 +66,7 @@ note right of HangmanGame
 - Created clean, professional documentation.
 
 ---
+
 
 ## 6. Key Changes from Original Code
 
