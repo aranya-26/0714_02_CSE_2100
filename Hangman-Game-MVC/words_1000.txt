@@ -1,0 +1,1000 @@
+footballer:messi
+footballer:ronaldo
+footballer:neymar
+footballer:mbappe
+footballer:zidane
+footballer:ronaldinho
+footballer:salah
+footballer:kane
+footballer:lewandowski
+footballer:modric
+footballer:benzema
+footballer:suarez
+footballer:iniesta
+footballer:xavi
+footballer:robben
+footballer:ribery
+footballer:drogba
+footballer:gerrard
+footballer:lampard
+footballer:terry
+footballer:rooney
+footballer:beckham
+footballer:henry
+footballer:pique
+footballer:ramos
+footballer:casillas
+footballer:buffon
+footballer:neuer
+footballer:de bruyne
+footballer:hazard
+cricketer:kohli
+cricketer:smith
+cricketer:warner
+cricketer:dhoni
+cricketer:root
+cricketer:babar
+cricketer:gayle
+cricketer:shakib
+cricketer:stokes
+cricketer:rashid
+cricketer:sachin
+cricketer:ponting
+cricketer:lara
+cricketer:kallis
+cricketer:murali
+cricketer:warne
+cricketer:botham
+cricketer:hadlee
+cricketer:ambrose
+cricketer:kumble
+cricketer:dravid
+cricketer:ganguly
+cricketer:sehwag
+cricketer:taylor
+cricketer:sangakkara
+cricketer:jayawardene
+cricketer:dilshan
+cricketer:afridi
+cricketer:younis
+cricketer:inzamam
+cricketer:imran
+ capital:bangladesh
+ capital:dhaka
+capital:india
+ capital:delhi
+ capital:usa
+ capital:washington
+capital:japan
+capital:tokyo
+capital:france
+capital:paris
+ capital:germany
+capital:berlin
+capital:italy
+capital:rome
+capital:spain
+capital:madrid
+capital:brazil
+capital:brasilia
+capital:canada
+capital:ottawa
+ capital:australia
+capital:canberra
+capital:china
+capital:beijing
+capital:russia
+capital:moscow
+capital:pakistan
+capital:islamabad
+capital:egypt
+capital:cairo
+electronic devices:keyboard
+electronic devices:mouse
+electronic devices:monitor
+electronic devices:cpu
+electronic devices:printer
+electronic devices:scanner
+electronic devices:speaker
+ electronic devices:camera
+electronic devices:laptop
+electronic devices:tablet
+electronic devices:router
+electronic devices:modem
+electronic devices:headphone
+electronic devices:microphone
+electronic devices:projector
+electronic devices:harddisk
+ electronic devices:pendrive
+ electronic devices:webcam
+electronic devices:joystick
+ electronic devices:smartwatch
+electronic devices:television
+electronic devices:remote
+ electronic devices:charger
+ electronic devices:battery
+ electronic devices:powerbank
+ electronic devices:flashdrive
+ electronic devices:graphics
+ electronic devices:motherboard
+electronic devices:processor
+ electronic devices:smartphone
+university:oxford
+university:cambridge
+university:harvard
+university:mit
+university:stanford
+university:yale
+university:princeton
+university:columbia
+university:khulna
+university:dhaka
+university:toronto
+university:melbourne
+university:tokyo
+university:berlin
+university:beijing
+university:sydney
+university:manchester
+university:edinburgh
+university:amsterdam
+university:zurich
+university:seoul
+university:singapore
+university:dubai
+university:cairo
+university:nairobi
+university:karachi
+university:mumbai
+university:rajshahi
+university:chittagong
+university:buet
+animal:lion
+animal:tiger
+animal:elephant
+animal:giraffe
+animal:zebra
+animal:monkey
+animal:dog
+animal:cat
+animal:horse
+animal:rabbit
+animal:wolf
+animal:fox
+animal:bear
+animal:panda
+animal:koala
+animal:kangaroo
+animal:cheetah
+animal:leopard
+animal:jaguar
+animal:crocodile
+animal:dolphin
+animal:whale
+animal:shark
+animal:penguin
+animal:eagle
+animal:parrot
+animal:owl
+animal:deer
+animal:camel
+animal:buffalo
+fruit:apple
+fruit:banana
+fruit:orange
+fruit:mango
+fruit:papaya
+fruit:kiwi
+fruit:grapes
+fruit:cherry
+fruit:pineapple
+fruit:watermelon
+fruit:strawberry
+fruit:blueberry
+fruit:peach
+fruit:plum
+fruit:apricot
+fruit:lemon
+fruit:lime
+fruit:coconut
+fruit:guava
+fruit:lychee
+fruit:jackfruit
+fruit:pomegranate
+fruit:fig
+fruit:date
+fruit:avocado
+fruit:melon
+fruit:mulberry
+fruit:raspberry
+fruit:tangerine
+fruit:passion
+verb:run
+verb:jump
+verb:eat
+verb:sleep
+verb:write
+verb:read
+verb:sing
+verb:swim
+verb:play
+verb:drink
+verb:walk
+verb:talk
+verb:think
+verb:drive
+verb:fly
+verb:dance
+verb:cook
+verb:draw
+verb:paint
+verb:laugh
+verb:cry
+verb:listen
+verb:teach
+verb:learn
+verb:build
+verb:break
+verb:open
+verb:close
+verb:push
+verb:pull
+money name:dollar
+money name:euro
+money name:pound
+money name:yen
+money name:taka
+money name:rupee
+money name:riyal
+money name:won
+money name:dinar
+money name:franc
+money name:peso
+money name:ruble
+money name:krona
+money name:baht
+money name:dirham
+money name:lira
+money name:shekel
+money name:ringgit
+money name:zloty
+money name:forint
+money name:krone
+money name:rand
+money name:naira
+money name:cedi
+money name:birr
+money name:shilling
+money name:tugrik
+money name:som
+money name:manat
+money name:lev
+president name:obama
+president name:biden
+president name:trump
+president name:putin
+president name:boris
+president name:macron
+president name:modi
+president name:xi
+president name:lula
+president name:justin
+president name:zelensky
+president name:erdogan
+president name:netanyahu
+president name:sunak
+president name:scholz
+president name:meloni
+president name:sandu
+president name:ardern
+president name:albanese
+president name:ramaphosa
+president name:sisi
+president name:maduro
+president name:lopez
+president name:bukele
+president name:boric
+president name:petro
+president name:lacalle
+president name:abiy
+president name:mnangagwa
+president name:kagame
+sport:football
+sport:cricket
+sport:basketball
+sport:tennis
+sport:volleyball
+sport:badminton
+sport:hockey
+sport:rugby
+sport:boxing
+sport:wrestling
+sport:swimming
+sport:cycling
+sport:golf
+sport:archery
+sport:shooting
+sport:karate
+sport:judo
+sport:taekwondo
+sport:gymnastics
+sport:athletics
+sport:baseball
+sport:softball
+sport:handball
+sport:squash
+sport:rowing
+sport:sailing
+sport:skiing
+sport:skating
+sport:surfing
+sport:diving
+color:red
+color:blue
+color:green
+color:yellow
+color:orange
+color:purple
+color:pink
+color:black
+color:white
+color:brown
+color:gray
+color:cyan
+color:magenta
+color:violet
+color:indigo
+color:maroon
+color:navy
+color:teal
+color:gold
+color:silver
+color:beige
+color:ivory
+color:crimson
+color:scarlet
+color:turquoise
+color:lavender
+color:olive
+color:coral
+color:salmon
+color:amber
+programming language:python
+programming language:java
+programming language:cpp
+programming language:csharp
+programming language:javascript
+programming language:ruby
+programming language:swift
+programming language:kotlin
+programming language:php
+programming language:rust
+programming language:golang
+programming language:typescript
+programming language:scala
+programming language:perl
+programming language:matlab
+programming language:r
+programming language:haskell
+programming language:lua
+programming language:dart
+programming language:fortran
+programming language:cobol
+programming language:assembly
+programming language:bash
+programming language:sql
+programming language:html
+programming language:css
+programming language:xml
+programming language:json
+programming language:yaml
+programming language:vhdl
+planet:mercury
+planet:venus
+planet:earth
+planet:mars
+planet:jupiter
+planet:saturn
+planet:uranus
+planet:neptune
+planet:pluto
+planet:sun
+planet:moon
+planet:europa
+planet:titan
+planet:ganymede
+planet:callisto
+planet:io
+planet:phobos
+planet:deimos
+planet:ceres
+planet:eris
+planet:makemake
+planet:haumea
+planet:sedna
+planet:quaoar
+planet:orcus
+planet:ixion
+planet:varuna
+planet:chaos
+planet:logos
+planet:salacia
+vegetable:potato
+vegetable:tomato
+vegetable:carrot
+vegetable:onion
+vegetable:garlic
+vegetable:spinach
+vegetable:broccoli
+vegetable:cabbage
+vegetable:cauliflower
+vegetable:pea
+vegetable:bean
+vegetable:corn
+vegetable:pepper
+vegetable:cucumber
+vegetable:lettuce
+vegetable:celery
+vegetable:radish
+vegetable:beetroot
+vegetable:mushroom
+vegetable:pumpkin
+vegetable:zucchini
+vegetable:eggplant
+vegetable:asparagus
+vegetable:artichoke
+vegetable:leek
+vegetable:turnip
+vegetable:parsnip
+vegetable:ginger
+vegetable:turmeric
+vegetable:coriander
+flower:rose
+flower:lily
+flower:tulip
+flower:daisy
+flower:sunflower
+flower:orchid
+flower:jasmine
+flower:marigold
+flower:hibiscus
+flower:lavender
+flower:lotus
+flower:dahlia
+flower:carnation
+flower:iris
+flower:poppy
+flower:bluebell
+flower:daffodil
+flower:violet
+flower:magnolia
+flower:peony
+flower:chrysanthemum
+flower:zinnia
+flower:begonia
+flower:pansy
+flower:aster
+flower:freesia
+flower:gardenia
+flower:primrose
+flower:snapdragon
+flower:foxglove
+profession:doctor
+profession:engineer
+profession:teacher
+profession:lawyer
+profession:nurse
+profession:pilot
+profession:chef
+profession:architect
+profession:scientist
+profession:journalist
+profession:police
+profession:soldier
+profession:firefighter
+profession:farmer
+profession:carpenter
+profession:plumber
+profession:electrician
+profession:mechanic
+profession:dentist
+profession:pharmacist
+profession:accountant
+profession:economist
+profession:psychologist
+profession:sociologist
+profession:historian
+profession:geologist
+profession:biologist
+profession:chemist
+profession:physicist
+profession:astronomer
+ocean:pacific
+ocean:atlantic
+ocean:indian
+ocean:arctic
+ocean:southern
+ocean:mediterranean
+ocean:caribbean
+ocean:bering
+ocean:coral
+ocean:tasman
+ocean:red
+ocean:black
+ocean:caspian
+ocean:arabian
+ocean:java
+ocean:south china
+ocean:north sea
+ocean:persian gulf
+ocean:bay of bengal
+ocean:gulf of mexico
+ocean:yellow sea
+ocean:east china
+ocean:andaman
+ocean:timor
+ocean:celebes
+ocean:banda
+ocean:flores
+ocean:molucca
+ocean:philippine
+ocean:sulu
+mountain:everest
+mountain:k2
+mountain:kangchenjunga
+mountain:lhotse
+mountain:makalu
+mountain:cho oyu
+mountain:dhaulagiri
+mountain:manaslu
+mountain:nanga parbat
+mountain:annapurna
+mountain:gasherbrum
+mountain:broad peak
+mountain:shishapangma
+mountain:gyachung kang
+mountain:himalchuli
+mountain:ngadi chuli
+mountain:peak 38
+mountain:kabru
+mountain:mana peak
+mountain:baruntse
+mountain:ama dablam
+mountain:aconcagua
+mountain:denali
+mountain:kilimanjaro
+mountain:elbrus
+mountain:mont blanc
+mountain:matterhorn
+mountain:fuji
+mountain:vesuvius
+mountain:etna
+river:amazon
+river:nile
+river:yangtze
+river:mississippi
+river:yenisei
+river:ob
+river:congo
+river:amur
+river:lena
+river:mekong
+river:niger
+river:mackenzie
+river:ganges
+river:brahmaputra
+river:volga
+river:indus
+river:danube
+river:zambezi
+river:murray
+river:orinoco
+river:paraná
+river:colorado
+river:columbia
+river:yukon
+river:seine
+river:thames
+river:rhine
+river:elbe
+river:padma
+river:meghna
+car brand:toyota
+car brand:honda
+car brand:ford
+car brand:bmw
+car brand:mercedes
+car brand:audi
+car brand:tesla
+car brand:ferrari
+car brand:lamborghini
+car brand:porsche
+car brand:volkswagen
+car brand:nissan
+car brand:hyundai
+car brand:kia
+car brand:mazda
+car brand:volvo
+car brand:jaguar
+car brand:bentley
+car brand:rolls royce
+car brand:bugatti
+car brand:maserati
+car brand:lexus
+car brand:subaru
+car brand:jeep
+car brand:chevrolet
+car brand:dodge
+car brand:peugeot
+car brand:renault
+car brand:fiat
+car brand:suzuki
+food:pizza
+food:burger
+food:pasta
+food:sushi
+food:biryani
+food:rice
+food:bread
+food:soup
+food:salad
+food:sandwich
+food:noodles
+food:curry
+food:kebab
+food:steak
+food:hotdog
+food:taco
+food:burrito
+food:dumpling
+food:ramen
+food:lasagna
+food:momos
+food:falafel
+food:hummus
+food:shawarma
+food:pho
+food:paella
+food:risotto
+food:croissant
+food:waffle
+food:pancake
+body part:head
+body part:eye
+body part:ear
+body part:nose
+body part:mouth
+body part:neck
+body part:shoulder
+body part:arm
+body part:elbow
+body part:wrist
+body part:hand
+body part:finger
+body part:chest
+body part:stomach
+body part:back
+body part:hip
+body part:leg
+body part:knee
+body part:ankle
+body part:foot
+body part:toe
+body part:heart
+body part:lung
+body part:liver
+body part:kidney
+body part:brain
+body part:bone
+body part:muscle
+body part:skin
+body part:blood
+social media:facebook
+social media:instagram
+social media:twitter
+social media:youtube
+social media:tiktok
+social media:snapchat
+social media:linkedin
+social media:pinterest
+social media:reddit
+social media:whatsapp
+social media:telegram
+social media:discord
+social media:twitch
+social media:tumblr
+social media:quora
+social media:wechat
+social media:line
+social media:viber
+social media:signal
+social media:skype
+social media:zoom
+social media:teams
+social media:slack
+social media:clubhouse
+social media:threads
+social media:mastodon
+social media:bluesky
+social media:vimeo
+social media:dailymotion
+social media:flickr
+musical instrument:guitar
+musical instrument:piano
+musical instrument:violin
+musical instrument:drums
+musical instrument:flute
+musical instrument:trumpet
+musical instrument:saxophone
+musical instrument:cello
+musical instrument:harp
+musical instrument:clarinet
+musical instrument:trombone
+musical instrument:banjo
+musical instrument:ukulele
+musical instrument:sitar
+musical instrument:tabla
+musical instrument:harmonium
+musical instrument:accordion
+musical instrument:mandolin
+musical instrument:oboe
+musical instrument:bassoon
+musical instrument:tuba
+musical instrument:xylophone
+musical instrument:marimba
+musical instrument:organ
+musical instrument:synthesizer
+musical instrument:bass
+musical instrument:recorder
+musical instrument:bagpipe
+musical instrument:didgeridoo
+musical instrument:lute
+clothing:shirt
+clothing:pants
+clothing:dress
+clothing:skirt
+clothing:jacket
+clothing:coat
+clothing:sweater
+clothing:hoodie
+clothing:jeans
+clothing:shorts
+clothing:suit
+clothing:tie
+clothing:scarf
+clothing:hat
+clothing:cap
+clothing:gloves
+clothing:socks
+clothing:shoes
+clothing:boots
+clothing:sandals
+clothing:belt
+clothing:underwear
+clothing:blouse
+clothing:vest
+clothing:cardigan
+clothing:trousers
+clothing:leggings
+clothing:swimsuit
+clothing:raincoat
+clothing:uniform
+weather:sunny
+weather:rainy
+weather:cloudy
+weather:windy
+weather:stormy
+weather:snowy
+weather:foggy
+weather:humid
+weather:cold
+weather:hot
+weather:thunder
+weather:lightning
+weather:hail
+weather:drizzle
+weather:blizzard
+weather:tornado
+weather:hurricane
+weather:cyclone
+weather:drought
+weather:flood
+weather:rainbow
+weather:frost
+weather:dew
+weather:mist
+weather:heatwave
+weather:snowfall
+weather:overcast
+weather:breezy
+weather:typhoon
+weather:sleet
+book genre:fiction
+book genre:nonfiction
+book genre:mystery
+book genre:thriller
+book genre:romance
+book genre:horror
+book genre:fantasy
+book genre:scifi
+book genre:biography
+book genre:history
+book genre:poetry
+book genre:drama
+book genre:comedy
+book genre:adventure
+book genre:crime
+book genre:western
+book genre:dystopian
+book genre:utopian
+book genre:mythology
+book genre:philosophy
+book genre:psychology
+book genre:self help
+book genre:travel
+book genre:cookbook
+book genre:children
+book genre:graphic novel
+book genre:memoir
+book genre:anthology
+book genre:classic
+book genre:satire
+shape:circle
+shape:square
+shape:triangle
+shape:rectangle
+shape:pentagon
+shape:hexagon
+shape:heptagon
+shape:octagon
+shape:oval
+shape:diamond
+shape:star
+shape:heart
+shape:arrow
+shape:cross
+shape:crescent
+shape:spiral
+shape:cube
+shape:sphere
+shape:cylinder
+shape:cone
+shape:pyramid
+shape:prism
+shape:torus
+shape:ellipse
+shape:rhombus
+shape:trapezoid
+shape:parallelogram
+shape:polygon
+shape:semicircle
+shape:quadrilateral
+disease:malaria
+disease:dengue
+disease:typhoid
+disease:cholera
+disease:tuberculosis
+disease:diabetes
+disease:cancer
+disease:asthma
+disease:pneumonia
+disease:influenza
+disease:covid
+disease:hiv
+disease:hepatitis
+disease:measles
+disease:polio
+disease:rabies
+disease:ebola
+disease:leprosy
+disease:arthritis
+disease:stroke
+disease:alzheimer
+disease:parkinson
+disease:epilepsy
+disease:anemia
+disease:hypertension
+disease:obesity
+disease:depression
+disease:anxiety
+disease:schizophrenia
+disease:autism
+airline:emirates
+airline:qatar
+airline:singapore
+airline:lufthansa
+airline:british airways
+airline:air france
+airline:delta
+airline:united
+airline:american
+airline:southwest
+airline:turkish
+airline:etihad
+airline:cathay
+airline:klm
+airline:swiss
+airline:japan airlines
+airline:ana
+airline:korean air
+airline:thai airways
+airline:malaysia
+airline:air india
+airline:biman
+airline:indigo
+airline:spicejet
+airline:wizz
+airline:ryanair
+airline:easyjet
+airline:finnair
+airline:scandinavian
+airline:aeromexico
+element:hydrogen
+element:helium
+element:lithium
+element:carbon
+element:nitrogen
+element:oxygen
+element:sodium
+element:magnesium
+element:aluminum
+element:silicon
+element:phosphorus
+element:sulfur
+element:chlorine
+element:potassium
+element:calcium
+element:iron
+element:copper
+element:zinc
+element:silver
+element:gold
+element:mercury
+element:lead
+element:uranium
+element:plutonium
+element:radon
+element:xenon
+element:neon
+element:argon
+element:fluorine
+element:bromine
+continent:asia
+continent:africa
+continent:europe
+continent:northamerica
+continent:southamerica
+continent:australia
+continent:antarctica
+furniture:chair
+furniture:table
+furniture:sofa
+furniture:bed
+furniture:wardrobe
+furniture:shelf
+furniture:desk
+furniture:cabinet
+furniture:drawer
+furniture:lamp
+furniture:mirror
+furniture:curtain
+furniture:carpet
+furniture:pillow
+furniture:mattress
+furniture:bench
+furniture:stool
+furniture:bookcase
+furniture:couch
+furniture:recliner
+furniture:ottoman
+furniture:nightstand
+furniture:dresser
+furniture:sideboard
+furniture:armchair
+furniture:bunk bed
+furniture:futon
+furniture:hammock
+furniture:footstool
+furniture:beanbag
+furniture:rocking chair
+furniture:futon sofa
