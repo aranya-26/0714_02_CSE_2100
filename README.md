@@ -34,12 +34,13 @@ This is a **Hangman Game** developed using **Raylib** library in C++. The projec
 
 ## 📌 Features
 
-- Interactive Hangman Game with beautiful UI
-- On-screen virtual keyboard + Physical keyboard support
-- Random word selection from multiple categories
-- Realistic hangman figure with progressive drawing
+- Beautiful raylib-based UI with animations
+- Physical keyboard + on-screen virtual keyboard
+- Sound effects (correct, wrong, win, lose, background)
+- Progressive hangman drawing
+- Random word selection from large dictionary
 - Restart and Quit functionality
-- Clean and maintainable code structure
+- Clean, professional code structure
 
 ---
 
@@ -55,7 +56,7 @@ This is a **Hangman Game** developed using **Raylib** library in C++. The projec
 | Layer          | Components                        | Responsibility |
 |----------------|-----------------------------------|--------------|
 | **Model**      | `GameState`, `WordLoader`         | Game data and core logic |
-| **View**       | `UIRenderer`, `KeyboardManager`   | All drawing and user interface |
+| **View**       | `UIRenderer`, `KeyboardManager`, `HangmanAnimator`   | All drawing and user interface |
 | **Controller** | `HangmanController`               | Input handling, game flow, coordination between Model & View |
 
 ---
@@ -64,7 +65,7 @@ This is a **Hangman Game** developed using **Raylib** library in C++. The projec
 
 ### Major Changes:
 1. **Created new Controller layer**
-   - `HangmanController.h` & `HangmanController.cpp` (New)
+   - `HangmanController.h` & `HangmanController.cpp` `HangmanAnimator.h` & `HangmanAnimator.cpp`(New)
    - Moved game loop, input handling, sound management, and restart logic here.
 
 2. **Separated responsibilities clearly:**
@@ -85,22 +86,39 @@ This is a **Hangman Game** developed using **Raylib** library in C++. The projec
 ---
 
 ## 📁 Project Structure
+```
 Hangman-Game-MVC/
-- ├── main.cpp
-- ├── HangmanController.h
-- ├── HangmanController.cpp
-- ├── GameState.h
-- ├── GameState.cpp
-- ├── UIRenderer.h
-- ├── UIRenderer.cpp
-- ├── KeyboardManager.h
-- ├── KeyboardManager.cpp
-- ├── WordLoader.h
-- ├── WordLoader.cpp
-- ├── hangman_types.h
-- ├── words.txt
-- ├── sounds/ (folder)
-- └── README.md
+- │
+- ├── assets/
+- │   └── sounds/
+- │       ├── correct.mp3
+- │       ├── lose.mp3
+- │       ├── win.mp3
+- │       └── wrong.mp3
+- │
+- ├── include/
+- │   ├── GameState.h           # [Model]      Core game state & data definitions
+- │   ├── HangmanAnimator.h     # [View]       Hangman figure drawing & animation
+- │   ├── HangmanController.h   # [Controller] Input handling & game flow control
+- │   ├── KeyboardManager.h     # [Controller] Keyboard input management
+- │   ├── UIRenderer.h          # [View]       UI rendering (letters, scoreboard, UI)
+- │   ├── WordLoader.h          # [Model]      Word loading from file
+- │   └── hangman_types.h       # [Model]      Shared types & enums
+- │
+├── src/
+- │   ├── GameState.cpp
+- │   ├── HangmanAnimator.cpp
+- │   ├── HangmanController.cpp
+- │   ├── KeyboardManager.cpp
+- │   ├── UIRenderer.cpp
+- │   ├── WordLoader.cpp
+- │   └── main.cpp
+- │
+- ├── words_1000.txt            # Word bank (1000 words)
+- ├── Hangman.exe               # Prebuilt Windows executable
+- └── Hangman_Executable.zip    # Zipped executable package
+```
+
 ---
 
 
@@ -109,21 +127,34 @@ Hangman-Game-MVC/
 ## 🛠️ Technologies Used
 
 - **Language:** C++
-- **Graphics Library:** Raylib
-- **IDE:** Code::Blocks
+- **Graphics & Audio:** raylib
 - **Architecture:** MVC Pattern
+- **IDE:** Code::Blocks
+- **Build System:** MinGW
 
 ---
 
-## 🎮 How to Run
+---
 
-1. Open the project in Code::Blocks
-2. Make sure `raylib` is properly linked
-3. Place `words.txt` in the correct directory
-4. Build and Run
+## 🎮 How to Play (Executable)
+
+1. Go to `Hangman_Executable/` folder
+2. Download or extract `Hangman_Final.zip`
+3. Run `Hangman.exe`
+4. Enjoy the game with sound, keyboard support, and smooth UI
 
 ---
-## 🔄 MVC Refactoring Process
+
+## 🛠️ How to Build from Source
+
+1. Open the project in **Code::Blocks**
+2. Make sure **raylib** is properly linked
+3. Set include and library paths correctly
+4. Build in **Release** mode (`Ctrl + F11`)
+5. Run the executable
+
+---
+## 🔄 AI prompt used
 
 We refactored the entire Hangman Game codebase from a monolithic structure into a clean **MVC (Model-View-Controller)** architecture using the following structured prompts:
 
@@ -157,19 +188,31 @@ Keep the existing main.cpp and other files working during transition."
 
 ---
 
-**Result:** Successfully transformed the project into a well-structured MVC architecture while maintaining identical gameplay behavior.
-## 📌 Learning Outcome
+## 🔄 MVC Refactoring Summary
 
-Through this assignment, I have successfully:
-- Understood and implemented **MVC Architecture**
-- Learned how to separate concerns in game development
-- Improved code organization and maintainability
-- Applied Object-Oriented Programming principles effectively
+This project was refactored using systematic steps to convert the previous mixed codebase into a well-structured MVC design while keeping the original gameplay completely unchanged.
 
----
-
-**Submitted as part of Assignment 3**  
-**Thank You!**
+**Key Improvements:**
+- Model is now independent of UI and input
+- View only handles rendering
+- Controller manages all coordination and game flow
+- Reduced coupling between components
 
 ---
 
+## 📝 Learning Outcomes
+
+- Deep understanding of **MVC Architecture**
+- Practical application of **Separation of Concerns**
+- Improved Object-Oriented Design skills
+- Better code organization and documentation practices
+
+
+---
+
+**Submitted as part of Assignment 3 - Advanced Programming Laboratory**
+
+---
+
+**Thank You!**  
+Feel free to explore the code and run the executable.
