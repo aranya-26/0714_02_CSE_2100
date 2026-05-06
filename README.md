@@ -16,6 +16,15 @@ Student Id: 240226 && 240231
 
 ---
 
+## 🎮 How to Play (Executable)
+
+1. Go to `Hangman-Game-MVC/` folder
+2. Download or extract `Hangman_Executable.zip`(With full sound exprience) 
+3. Run `Hangman.exe`
+4. Enjoy the game with sound, keyboard support, and smooth UI
+
+---
+
 ## 🚀 Project Overview
 
 This is a **Hangman Game** developed using **Raylib** library in C++. The project demonstrates the implementation of **MVC (Model-View-Controller)** architectural pattern.
@@ -133,15 +142,6 @@ Hangman-Game-MVC/
 - **Build System:** MinGW
 
 ---
-
----
-
-## 🎮 How to Play (Executable)
-
-1. Go to `Hangman_Executable/` folder
-2. Download or extract `Hangman_Final.zip`
-3. Run `Hangman.exe`
-4. Enjoy the game with sound, keyboard support, and smooth UI
 
 ---
 
